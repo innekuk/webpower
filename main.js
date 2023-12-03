@@ -6,7 +6,7 @@ const port = 3000
 const template = require('./template.js')
 const mysql      = require('mysql2');
 const db = mysql.createConnection({
-  host     : 'localhost',
+  host     : 'svc.sel4.cloudtype.app',
   user     : 'root',
   password : '1234',
   database : 'nba'
