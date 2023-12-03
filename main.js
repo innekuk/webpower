@@ -9,7 +9,8 @@ const db = mysql.createConnection({
   host     : 'svc.sel4.cloudtype.app',
   user     : 'root',
   password : '1234',
-  database : 'nba'
+  database : 'nba',
+  port: 30976
 });
 
 db.connect();
