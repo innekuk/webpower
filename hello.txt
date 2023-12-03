@@ -1,0 +1,37 @@
+show databases;
+create database nba;
+use nba;
+show tables;
+Drop table team;
+CREATE table team(
+	teamname varchar(5) NOT NULL,
+    longname varchar(20) NOT NULL,
+    ace varchar(30) NOT NULL
+
+);
+
+
+SELECT * 
+            FROM games
+            JOIN team ON games.ftname = team.teamname
+            WHERE games.id = 1;
+
+
+SELECT * FROM games JOIN team AS team1 ON games.ftname = team1.teamname JOIN team AS team2 ON games.stname = team2.teamname WHERE games.id = 1;
+
+SELECT * FROM games;
+DROP TABLE games;
+
+CREATE TABLE games(
+id int(10) Not NULL AUTO_INCREMENT ,
+ftname varchar(5) NOT NULL,
+ftscore int(10) NOT NULL,
+stname varchar(5) NOT NULL,
+stscore int(10) NOT NULL,
+gamehighlight varchar(300),
+PRIMARY KEY (id)
+);
+insert into team(teamname , longname,ace) values("LAL","LA LAKERS" , "LEBRON JAMES");
+insert into team(teamname , longname,ace) values("ATL" , "ATLANTA HAWKS", "TRAE YOUNG");
+
+insert into games(ftname , ftscore,stname,stscore,gamehighlight) values("ATL",120 , "LAL" ,121,"https://nba-stories.com/webstories/d95e9018-58bd-071a-0d6d-3a0ecbf6944f.html?x-storyteller-api-key=c23993ee-0229-4b3b-aaa7-5f024cff56f5");
